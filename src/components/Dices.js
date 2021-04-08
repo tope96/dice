@@ -5,7 +5,11 @@ import GetRandomValues from "./GetRandomValues";
 const Dices = () => {
 
     const emptyDice = {values: "", isActive: true}
-    const [dices, setDices] = useState([emptyDice])
+    const [dices, setDices] = useState(JSON.parse(localStorage.getItem("dices")) || emptyDice)
+
+    useEffect(() => {
+        localStorage.setItem("dices", JSON.stringify(dices))
+    },[dices])
 
     const createEmptyDice = () => {
         setDices([...dices, emptyDice])
