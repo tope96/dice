@@ -14,6 +14,7 @@ const GetRandomValues = ({dicesValues}) => {
             if(dice.isActive){
                 if(dice.values.length === 0){
                     randomSentence = ''
+                    return
                 } else {
                     let allNonEmptyValues = dice.values.filter(function (el) {
                         return el !== "";
