@@ -15,7 +15,11 @@ const GetRandomValues = ({dicesValues}) => {
                 if(dice.values.length === 0){
                     randomSentence = ''
                 } else {
-                    randomSentence += (dice.values[Math.floor(Math.random() * dice.values.length)]) + "\n"
+                    let allNonEmptyValues = dice.values.filter(function (el) {
+                        return el !== "";
+                    });
+
+                    randomSentence += (allNonEmptyValues[Math.floor(Math.random() * allNonEmptyValues.length)]) + " "
                     setNumber(number+1)
                 }
             }
@@ -30,7 +34,7 @@ const GetRandomValues = ({dicesValues}) => {
                 <button className={'btn '} onClick={getRandom}><i className="fas fa-dice dice-icon"></i></button>
                 <div className={'row'}>
                     <div className={'col'}>
-                        <p>Liczba kulania: {number}</p>
+                        <p>Liczba rzutów: {number}</p>
                     </div>
                 </div>
                 <div className={'row'}>
