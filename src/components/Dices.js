@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Input from "./Input";
+import GetRandomValues from "./GetRandomValues";
 
 const Dices = () => {
 
-    const emptyDice = {values: "", isActive: ""}
+    const emptyDice = {values: "", isActive: true}
     const [dices, setDices] = useState([emptyDice])
 
     const createEmptyDice = () => {
@@ -13,25 +14,32 @@ const Dices = () => {
     const updateDice = (index, newValue) => {
         let newValues = [...dices]
         newValues[index] = newValue
+        if(newValues[index].values.length !== 0 && !Array.isArray(newValues[index].values)){
+            newValues[index].values = newValues[index].values.split(',')
+        }
+
         setDices(newValues)
     }
 
     const deleteDice = (index) => {
-        console.log(index)
+        if(dices.length-1 === 0){
+            return
+        }
         let newValueList = [...dices]
         newValueList.splice(index, 1)
-        console.log(newValueList)
         setDices(newValueList)
     }
 
     return(
-        <div>
+        <div className={'dices-area'}>
 
             {dices.map((value, index) => {
                 return <Input dice={value} index={index} updateDice={updateDice} deleteDice={deleteDice}/>
             })}
 
-            <button className={'btn btn-success'} onClick={() => {createEmptyDice()}}>Dodaj kostke</button>
+            <button className={'btn btn-outline-success'} onClick={() => {createEmptyDice()}}>Dodaj kość <i className="fas fa-plus"></i></button>
+
+            <GetRandomValues dicesValues={dices}/>
         </div>
     )
 }

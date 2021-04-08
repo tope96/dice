@@ -1,0 +1,32 @@
+.trash-icon{
+    font-size: 1em;
+}
+
+.trash-icon:hover{
+    color: #c62222;
+    transition: 0.5s
+}
+
+.dices-area{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.dice-icon{
+    font-size: 5rem;
+    color: green;
+    margin-bottom: 2rem;
+}
+
+.dice-icon:hover{
+    color: #efef63;
+    transition: 0.5s;
+}
+
+.randomize-area{
+    margin-top: 3rem;
+}
+
+.result{
+    font-size: 3rem;
+}
