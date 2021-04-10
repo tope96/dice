@@ -23,6 +23,7 @@ const Input = ({dice, index, updateDice, deleteDice}) => {
                                 onChange={(e) => {
                                     setNewValueDice({...newValueDice, isActive: e.target.checked})
                                 }}
+                                data-tooltip={"Aktywacja/deaktywacja kości"}
                                 checked={newValueDice.isActive}
                             />
                         </div>
@@ -39,7 +40,7 @@ const Input = ({dice, index, updateDice, deleteDice}) => {
                     />
                     <div className="input-group-append">
                         <div className="input-group-text">
-                            <i onClick={() => deleteDice(index)}><i className="fas fa-trash trash-icon"></i></i>
+                            <a onClick={() => deleteDice(index)} data-tooltip={"Usuń kość"}><i className="fas fa-trash trash-icon"></i></a>
                         </div>
                     </div>
                 </div>

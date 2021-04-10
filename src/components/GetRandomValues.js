@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from "react";
+import '../style/style.css'
 
 const GetRandomValues = ({dicesValues}) => {
 
@@ -32,7 +33,7 @@ const GetRandomValues = ({dicesValues}) => {
     return(
         <div className={'row randomize-area'}>
             <div className={'col'}>
-                <button className={'btn '} onClick={getRandom}><i className="fas fa-dice dice-icon"></i></button>
+                <button className={'btn '} onClick={getRandom} data-tooltip={"Rzuć kością"}><i className="fas fa-dice dice-icon"/></button>
                 <div className={'row'}>
                     <div className={'col'}>
                         <p>Liczba rzutów: {number}</p>

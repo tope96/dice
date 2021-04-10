@@ -30,3 +30,55 @@
 .result{
     font-size: 3rem;
 }
+
+[data-tooltip]{
+    position: relative;
+    text-decoration: none;
+}
+
+[data-tooltip]:before{
+    position: absolute;
+    z-index: 2;
+    bottom: 100%;
+    left: 50%;
+    padding: 0.5rem 1em;
+    white-space: nowrap;
+    content: attr(data-tooltip);
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.7em;
+    background-color: dodgerblue;
+    opacity: 0;
+    transform: translate(-50%,0);
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease-out;
+    pointer-events: none;
+}
+
+[data-tooltip]:after{
+    position: absolute;
+    z-index: 3;
+    display: block;
+    bottom: 100%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: -4px;
+    content: '';
+    background-color: dodgerblue;
+    opacity: 0;
+    transform: translate(-50%, 0) rotate(45deg);
+    transition: transform 0.2s ease-out;
+    pointer-events: none;
+}
+
+[data-tooltip]:hover:after{
+    opacity: 1;
+    transform: translate(-50%, -10px) rotate(45deg);
+}
+
+[data-tooltip]:hover:before{
+    opacity: 1;
+    transform: translate(-50%, -10px);
+}
