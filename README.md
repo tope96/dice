@@ -1,4 +1,4 @@
-# Dices 🎲
+# Dice 🎲
 
 ## About
   Simple dice roll tool where you can add dice dynamically.
