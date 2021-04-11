@@ -82,3 +82,12 @@
     opacity: 1;
     transform: translate(-50%, -10px);
 }
+
+.default-dice-container{
+    margin-bottom: 2rem;
+}
+
+.default-dice{
+    margin-right: 1rem;
+    border-radius: 30px;
+}

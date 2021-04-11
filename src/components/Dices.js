@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Input from "./Input";
 import GetRandomValues from "./GetRandomValues";
+import DefaultsDice from "./DefaultsDice";
 
 const Dices = () => {
 
@@ -36,6 +37,8 @@ const Dices = () => {
 
     return(
         <div className={'dices-area'}>
+
+            <DefaultsDice setDices={setDices}/>
 
             {dices.map((value, index) => {
                 return <Input dice={value} index={index} updateDice={updateDice} deleteDice={deleteDice}/>
