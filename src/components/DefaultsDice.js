@@ -16,9 +16,9 @@ const DefaultDice = ({setDices}) => {
     return(
         <div className={'row default-dice-container'}>
             <div className={'col'}>
-                <button className={'btn btn-outline-secondary default-dice'} onClick={() => getDice('normal')} data-tooltip={"Załaduj kostkę"}>Zwykła kostka</button>
-                <button className={'btn btn-outline-secondary default-dice'} onClick={() => getDice('dnd')} data-tooltip={"Załaduj kostkę"}>D&D</button>
-                <button className={'btn btn-outline-secondary default-dice'} onClick={() => getDice('monopoly')} data-tooltip={"Załaduj kostkę"}>Monopoly</button>
+                <button className={'btn btn-outline-secondary button-margin default-dice'} onClick={() => getDice('normal')} data-tooltip={"Załaduj kostkę"}>Zwykła kostka</button>
+                <button className={'btn btn-outline-secondary button-margin default-dice'} onClick={() => getDice('dnd')} data-tooltip={"Załaduj kostkę"}>D&D</button>
+                <button className={'btn btn-outline-secondary button-margin default-dice'} onClick={() => getDice('monopoly')} data-tooltip={"Załaduj kostkę"}>Monopoly</button>
             </div>
         </div>
     )

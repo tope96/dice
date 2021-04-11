@@ -24,7 +24,7 @@
 }
 
 .randomize-area{
-    margin-top: 3rem;
+    margin-top: 6rem;
 }
 
 .result{
@@ -87,7 +87,10 @@
     margin-bottom: 2rem;
 }
 
-.default-dice{
+.button-margin{
     margin-right: 1rem;
+}
+
+.default-dice{
     border-radius: 30px;
 }

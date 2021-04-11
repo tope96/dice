@@ -35,6 +35,10 @@ const Dices = () => {
         setDices(newValueList)
     }
 
+    const resetDice = () => {
+        setDices([emptyDice])
+    }
+
     return(
         <div className={'dices-area'}>
 
@@ -44,8 +48,8 @@ const Dices = () => {
                 return <Input dice={value} index={index} updateDice={updateDice} deleteDice={deleteDice}/>
             })}
 
-            <button className={'btn btn-outline-success'} onClick={() => {createEmptyDice()}}>Dodaj kość <i className="fas fa-plus"></i></button>
-
+            <button className={'btn btn-outline-success button-margin'} onClick={() => {createEmptyDice()}}>Dodaj kość <i className="fas fa-plus"></i></button>
+            <button className={'btn btn-outline-secondary'} onClick={() => {resetDice()}}>Resetuj kości</button>
             <GetRandomValues dicesValues={dices}/>
         </div>
     )
