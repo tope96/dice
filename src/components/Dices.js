@@ -7,6 +7,7 @@ const Dices = () => {
 
     const emptyDice = {values: "", isActive: true}
     const [dices, setDices] = useState(JSON.parse(localStorage.getItem("dices")) || emptyDice)
+    const [number, setNumber] = useState(0)
 
     useEffect(() => {
         localStorage.setItem("dices", JSON.stringify(dices))
@@ -37,6 +38,7 @@ const Dices = () => {
 
     const resetDice = () => {
         setDices([emptyDice])
+        setNumber(0)
     }
 
     return(
@@ -50,7 +52,7 @@ const Dices = () => {
 
             <button className={'btn btn-outline-success button-margin'} onClick={() => {createEmptyDice()}}>Dodaj kość <i className="fas fa-plus"></i></button>
             <button className={'btn btn-outline-secondary'} onClick={() => {resetDice()}}>Resetuj kości</button>
-            <GetRandomValues dicesValues={dices}/>
+            <GetRandomValues dicesValues={dices} setNumber={setNumber} number={number} />
         </div>
     )
 }

@@ -1,10 +1,15 @@
-import React,{useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import '../style/style.css'
 
-const GetRandomValues = ({dicesValues}) => {
+const GetRandomValues = ({dicesValues, setNumber, number}) => {
 
     const [randomValues, setRandomValues] = useState('')
-    const [number, setNumber] = useState(0)
+
+    useEffect(() => {
+        if(number === 0){
+            setRandomValues('')
+        }
+    },[number])
 
     const getRandom = () => {
         let randomSentence = ""
